@@ -48,6 +48,7 @@
 <div id="startScreen">
   <h1>Tap anywhere to start the surprise 🎁</h1>
 </div>
+  <div id="tapMsg">Tap anywhere to start 🎵</div>
 
 <!-- MAIN CONTENT -->
 <div id="mainContent" class="hidden">
@@ -224,16 +225,23 @@
 
   
 <!-- 🎵 MUSIC -->
-<audio id="bgMusic" preload="auto">
+<audio id="bgMusic" loop>
   <source src="love.mp3" type="audio/mpeg">
 </audio>
-  <audio controls autoplay>
-  <source src="love.mp3" type="audio/mpeg">
-</audio>
-
+  
 <script src="script.js"></script>
 </body>
+  <script>
+  document.addEventListener("click", function () {
+    const music = document.getElementById("bgMusic");
+
+    if (music.paused) {
+      music.play();
+    }
+  }, { once: true });
+</script>
 </html>
+
 
 
 
