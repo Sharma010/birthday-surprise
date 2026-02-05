@@ -54,7 +54,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-  margin-left:50px
+  margin-left:40px
 }
 
 /* HEART SVG */
@@ -90,9 +90,9 @@ body {
   animation-delay: 6s;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
-  justify-content: center;
+ 
   align-items: center;
-  margin-right:50px
+  margin-right:80px
   
   
 }
@@ -203,7 +203,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  bottom-right: 30px;
+  border-bottom-right-radius:30px;
 }
 
 /* 🕯️ CANDLE */
@@ -216,7 +216,7 @@ body {
   transform: translateX(-50%);
   top: -100px;
   border-radius: 5px;
-  animation: dropCandle 1.5s ease forwards;
+  animation: dropCandle 2s ease forwards;
 }
 
 @keyframes dropCandle {
