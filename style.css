@@ -206,6 +206,7 @@ body {
   display: flex;
   justify-content: center;
   border-bottom-right-radius:30px;
+  
 }
 
 /* 🕯️ CANDLE */
@@ -227,6 +228,55 @@ body {
   }
 }
 
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* 🎉 Birthday Text */
+  .typewriter,
+  .title,
+  h1 {
+    font-size: 26px !important;
+    margin-top: 30px;
+  }
+
+  /* ❤️ Heart */
+  .heart,
+  .heart-container {
+    transform: scale(1.4);
+    margin: 30px auto;
+  }
+
+  /* 🎂 Cake container */
+  #cake,
+  .cake {
+    transform: scale(1.6);
+    margin-top: -120px;   /* MOVE CAKE UP */
+  }
+
+  /* 🕯️ Candle position */
+  .candle {
+    top: -35px;   /* stick candle closer to cake */
+  }
+}
+#cake {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.heart {
+  font-size: 22px;
+  text-align: center;
+}
+
+
 /* 🔥 FLAME */
 .flame {
   width: 14px;
@@ -243,4 +293,5 @@ body {
   from { transform: scale(1); opacity: 0.8; }
   to { transform: scale(1.2); opacity: 1; }
 }
+
 
