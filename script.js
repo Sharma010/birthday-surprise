@@ -1,25 +1,28 @@
 const startScreen = document.getElementById("startScreen");
 const mainContent = document.getElementById("mainContent");
-const candle = document.getElementById("candle");
 const music = document.getElementById("bgMusic");
 
 function startSurprise() {
-  // 1️⃣ Hide start screen
+  // hide tap screen
   startScreen.style.display = "none";
 
-  // 2️⃣ Show content
+  // show content
   mainContent.classList.remove("hidden");
 
-  // 3️⃣ Play music
-  music.volume = 0.6;
-  music.play().catch(() => {});
+  // 🔊 PLAY AUDIO (MOBILE SAFE)
+  music.muted = false;
+  music.volume = 0.7;
 
-  // 4️⃣ SHOW CANDLE AFTER CAKE ANIMATION
-  setTimeout(() => {
-    candle.classList.remove("hidden");
-  }, 6000); // ⏱ matches SVG cake animation duration
+  const playPromise = music.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(err => {
+      console.log("Audio blocked:", err);
+    });
+  }
+
+  // other animations can start AFTER
 }
 
-// Desktop + mobile
-startScreen.addEventListener("click", startSurprise);
-startScreen.addEventListener("touchstart", startSurprise);
+// 🔥 THIS IS KEY (touchstart)
+startScreen.addEventListener("touchstart", startSurprise, { once: true });
+startScreen.addEventListener("click", startSurprise, { once: true });
