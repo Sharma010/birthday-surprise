@@ -61,9 +61,10 @@ function startConfetti() {
     `;
     document.head.appendChild(style);
 }
-document.addEventListener("click", function () {
+document.addEventListener("click", () => {
   const music = document.getElementById("bgMusic");
-  if (music && music.paused) {
-    music.play();
+  if (music) {
+    music.volume = 0.5;   // soft romantic sound
+    music.play().catch(() => {});
   }
 }, { once: true });
